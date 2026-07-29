@@ -17,3 +17,7 @@ version = "0.0.1"
 [[package]]
 name = "singularity-runtime"
 version = "0.0.1"
+
+[[package]]
+name = "singularity-sdk"
+version = "0.0.1"

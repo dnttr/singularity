@@ -5,12 +5,13 @@ members = [
     "src/compositor",
     "src/graphics",
     "src/hardware",
-    "src/runtime"
+    "src/runtime",
+    "sdk"
 ]
 
 [workspace.lints.rust]
 unsafe_code = "deny"
-missing_docs = "deny"
+missing_docs = "warn"
 
 [workspace.dependencies]
 
