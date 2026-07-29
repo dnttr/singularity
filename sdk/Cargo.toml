@@ -1,0 +1,8 @@
+[package]
+name = "singularity-sdk"
+version = "0.0.1"
+edition = "2024"
+
+[features]
+default = ["std"]
+std = []

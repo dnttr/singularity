@@ -1,0 +1,23 @@
+[workspace]
+resolver = "2"
+
+members = [
+    "src/compositor",
+    "src/graphics",
+    "src/hardware",
+    "src/runtime"
+]
+
+[workspace.lints.rust]
+unsafe_code = "deny"
+missing_docs = "deny"
+
+[workspace.dependencies]
+
+[profile.dev]
+opt-level = 0
+debug = true
+
+[profile.release]
+opt-level = 3
+lto = true
