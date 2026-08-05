@@ -1,0 +1,27 @@
+[Unit]
+Description=Singularity Runtime
+
+#The runtime should be started after the system is functional.
+After=multi-user.target systemd-user-sessions.service
+
+[Service]
+#We are using crate 'sd-notify'
+Type=notify
+
+#Absolute path to the runtime binary
+ExecStart=/usr/bin/singularity-runtime
+
+#Always restart after 2 seconds, regardless of the exit code
+Restart=always
+RestartSec=2
+
+#Execute the service as 'user'
+User=user
+
+#Safeguards
+NoNewPrivileges=yes
+ProtectHome=yes
+ProtectSystem=strict
+
+[Install]
+WantedBy=graphical.target
