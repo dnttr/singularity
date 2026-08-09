@@ -190,6 +190,7 @@ name = "singularity-runtime"
 version = "0.0.1"
 dependencies = [
  "sd-notify",
+ "singularity-hal",
  "tokio",
  "tracing",
  "tracing-subscriber",

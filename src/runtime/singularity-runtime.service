@@ -15,13 +15,14 @@ ExecStart=/usr/bin/singularity-runtime
 Restart=always
 RestartSec=2
 
-#Execute the service as 'user'
-User=user
+#Execute the service as 'root'
+User=root
 
-#Safeguards
-NoNewPrivileges=yes
-ProtectHome=yes
-ProtectSystem=strict
+#Safeguards, though runtime should have full access to the system, so no point in restricting it.
+#At least, for now.
+#NoNewPrivileges=yes
+#ProtectHome=yes
+#ProtectSystem=strict
 
 [Install]
 WantedBy=graphical.target

@@ -15,5 +15,19 @@
  */
 
 fn main() {
-    println!("Singularity runtime is running!");
+    println!("Hello, world!");
+
+    let err = sd_notify::notify(&[sd_notify::NotifyState::Ready]);
+
+    if (err.is_err()) {
+        eprintln!("Failed to notify systemd: {}", err.unwrap_err());
+    }
+
+    loop {
+        println!("Entering main loop, sleep 1 min");
+        std::thread::sleep(std::time::Duration::from_mins(1));
+    }
+    println!("Leaving main loop");
+
+    println!("Singularity runtime has finished!");
 }
